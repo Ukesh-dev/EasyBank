@@ -1,0 +1,111 @@
+.hero{
+  background-color: $veryLightGray;
+  // height: 41rem;
+  // overflow: visible;
+
+  // .wrapper{
+  //   max-width: 1400px;
+  //   margin:  0 auto;
+    // overflow-x: hidden;
+    // overflow-y: visible;
+    // padding-bottom: 60px;
+    // margin-bottom: -60px;
+  // }
+ 
+  .container{
+    @include breakpoint-up(large){
+      display: flex;
+      align-items: center;
+      
+    }
+  }
+
+  &__image{
+    position: relative;
+    background: url('/images/bg-intro-mobile.svg');
+    // min-height: 42vh;
+    min-height: 19rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+ 
+
+      @include breakpoint-up(medium){
+        min-height: 23rem;
+      }
+      @include breakpoint-up(large){
+        flex: 3;
+        order: 2;
+        // height: 100%;
+        background: none;
+        min-height: 41rem;
+
+        &::after{
+          content: '';
+          width: 87%;
+          height: 120%;
+          position: absolute;
+          background: url(/images/image-mockups.png);
+          background-size: 125%;
+          background-repeat: no-repeat;
+          background-position: 12% 158%;
+          left: 32%;
+         
+        //  overflow:visible;
+
+        }
+       
+      }
+
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(/images/image-mockups.png);
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: center 98%;
+
+      @media (min-width: 420px) {
+        background-size: 70%;
+        background-position: center 94%;
+      }
+
+      @include breakpoint-up(medium){
+        background-size: 40%;
+      }
+
+      @include breakpoint-up(large){
+        width: 119%;
+        background: url(/images/bg-intro-desktop.svg);
+        background-position: 0% 68%;
+        background-size: 167%;
+        background-repeat: no-repeat;
+      }
+     
+
+    }
+}
+    &__text{
+      text-align: center;
+      flex: 2;
+      order: 1;
+
+      @include breakpoint-up(large){
+        text-align: left;
+        height: 100%;
+        padding-bottom: 6rem;
+
+       
+
+      }
+
+      
+    }
+
+  
+
+}
+
